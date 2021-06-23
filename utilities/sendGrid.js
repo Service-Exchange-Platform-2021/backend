@@ -1,6 +1,5 @@
-const sgMail = require('@sendgrid/mail');
+const sgMail = require('@sendgrid/mail')
 require('dotenv').config()
-
 sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
 //const link = `${req.protocol}://localhost:4000/reset_password/${token}`;
@@ -8,7 +7,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 const sendPwResetEmail = (token) => {
 
 const msg = {
-  to: 'hidomi@gmail.com', // Change to your recipient
+  to: 'service.exchange.platform.2021@hotmail.com', // Change to your recipient
   from: 'service.exchange.platform.2021@gmail.com', // Change to your verified sender
   subject: 'Here comes the reset password link!!',
   text: `There is link to reset your password`,
