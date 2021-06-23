@@ -2,7 +2,7 @@ const express = require('express')
 const jwt = require('jsonwebtoken')
 //const sendEmail = require('./nodeMail');
 require('dotenv').config();
-const sendEmail = require('../utilities/sendGrid_PW');
+const sendEmail = require('../utilities/sendGrid');
 
 const Essential = require('../models/essentialModel')
 

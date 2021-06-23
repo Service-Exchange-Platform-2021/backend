@@ -1,15 +1,18 @@
 const customerError = require("../config/customError");
 require("dotenv").config();
-const sendEmail = require('../utilities/sendGrid_MSG')
+const nodeMail = require('../utilities/nodeMail')
 
 const sendEmailController = async(req, res, next) => {
 
     //toUser is the recepient, fromUser is the sender
-    const {sender, recipient, subject, text, username} = req.body    
-        
-        sendEmail(sender, recipient, subject, text, username)
-        .then(res.json({ msg: "an email was sent to the recipient", status: 200 }))  
-        .catch(err=>err.message)              
+    const {fromEmail, toEmail, subject, message, username} = req.body    
+        // console.log(req.body)
+        nodeMail(fromEmail, toEmail, subject, message, username)        
+        await (res.json({ msg: `You have sent an email to ${toEmail}`, status: 200 })) 
+         
+        // the following two lines are from the original template
+        //.then(res.json({ msg: `You have sent an email to ${toEmail}`, status: 200 }))   
+        //.catch(err=>err.message)              
         }  
 
 

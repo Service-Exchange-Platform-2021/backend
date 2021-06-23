@@ -82,7 +82,7 @@ app.use('/reset_password', pwResetRouter);
 app.use('/itemSkillsSeed', itemSkillsSeedRouter)
 app.use('/itemSkills', itemSkillsRouter);
 app.use('/search', searchRouter);
-app.use('/search/sendemail', sendEmailRouter)
+app.use('/search/send_email', sendEmailRouter)
 
 
 //a simple test to make sure server works
