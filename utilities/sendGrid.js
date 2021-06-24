@@ -17,9 +17,10 @@ const msg = {
         <strong>and easy to do anywhere, even with Node.js</strong>
         <a href="http://localhost:3000/reset_password/${token}"> Click Here to Change Password </a>
         <ol>
-          <li>The token is valid for 60 minutes by the time the email sent to you.</li>
-          <li>The link can only be used once.</li>
-          <li>If you follow the link but without resetting a new password, please repeat the same steps to go back to the 'forget password' page to request the service.</li>
+          <li>The token is valid for <strong><italic>60 minutes</italic></strong> by the time the email sent to you.</li>
+          <li>The link can be used a multiple times before the token becomes invalid.</li>
+          <li>Plase make sure you follow the password pattern to reset a new one for yourself.</li>
+          <li>If you follow the link but without resetting a new password successfully, please come back here to click the link again before the token becomes invalid.</li>
         </ol>
         `,
 }
@@ -35,9 +36,8 @@ const msg = {
 //sgMail itself is a promise, but the whole function is not
 //this is to convert the whole function into a promise
 //so sendPwResetEmail function can be converted into a promise to be used with .then
-return sgMail.send(msg)
-
-}
+    return sgMail.send(msg)
+  }
 
 module.exports = sendPwResetEmail 
 
