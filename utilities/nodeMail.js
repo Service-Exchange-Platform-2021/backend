@@ -17,9 +17,9 @@ const nodeMail = (fromEmail, toEmail, subject, message, username) =>{
         //IMPORTANT!! The following email shall not be changed!!!!!
         from: `${process.env.EMAIL_ACCOUNT}`, 
         //to: `${toEmail}`
-        // to: `service.exchange.platform.2021@hotmail.com`, 
+        //gmail does not work well with nodemailer
+        to: `service.exchange.platform.2021@gmail.com`,
         // you can replace your own email account in the following 'to: xxxx' field
-        to: `johnnycbcs@gmail.com`,
         subject: `${subject}`,
         text: `${message}`,
         html: `

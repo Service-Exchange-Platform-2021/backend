@@ -8,8 +8,8 @@ const profileUser= async (req, res, next) => {
   // we post   description
   // email is not to be modified
 
-  console.log(req.user) //req.user comes from login controller
-  console.log(req.body)
+  console.log('user:',req.user) //req.user comes from login controller
+  console.log('body',req.body)
   try {
     //id: user._id. req.user._id, instead of req.user.id is used, because in login controller the payload takes _id as one part of the jwt generator                                        
     const user = await User.findByIdAndUpdate(req.user.id, req.body, {new: true}) 
@@ -18,13 +18,12 @@ const profileUser= async (req, res, next) => {
     if (!user) {
       return res.status(400).json({ errors: {msg: "no user found!"} });
     }
-
+    console.log(user)
     res.status(200).json(user)    
     
     } catch (err) {
       return next(err);
       }  
   }
-
 
 module.exports = profileUser;

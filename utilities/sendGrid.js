@@ -8,7 +8,7 @@ const sendPwResetEmail = (token) => {
 
 const msg = {
   //johnnycbcs@gmail.com, you can replace this with your own email address to try
-  to: 'cybersagittarius@gmail.com', // Change to your recipient
+  to: 'service.exchange.platform.2021@hotmail.com', // Change to your recipient
   //IMPORTANT!!!!!! The following email shall not be changed !!!!!!!!!!!!!
   from: 'service.exchange.platform.2021@gmail.com', // Change to your verified sender
   subject: 'Here comes the reset password link!!',
